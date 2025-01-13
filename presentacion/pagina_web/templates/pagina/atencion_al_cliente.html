@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atención al Cliente</title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/LOGOS_CARGA_PAGINA/HOLA.png' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="atencion-page" class="bg-gray-100"> <!-- Añadimos un ID único para esta página -->
+  
+  {% include 'components/menu_hamburguesa.html'%}
+
+  <!-- Contenido principal -->
+  <main class="ml-64 p-8">
+    <h2 class="centered-title">Contactos de Atencion al Cliente</h2>
+    
+    <div class="grid-container">
+        <div class="agency-card">
+          <h3 class="mb-4 text-lg font-bold text-center">Fersan Motors Volkswagen</h3>
+          <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+          <div class="icon-container">
+            <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+            <p>Teléfono de contacto: <a href="Tel: 55-15-61-20-70">55-15-61-20-70</a></p>
+          </div>
+      
+          <div class="flex items-center space-x-4">
+            <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+            <p class="text-sm">
+              Correo de contacto: 
+              <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+            </p>
+          </div>
+
+          <h3 class="mb-4 text-lg font-bold text-center">Chalco</h3>
+          <div class="icon-container">
+            
+            <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+            <p>Teléfono de contacto: <a href="Tel: 55-92-66-72-50">55-92-66-72-50</a></p>
+          </div>
+      
+          <div class="flex items-center space-x-4">
+            <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+            <p class="text-sm">
+              Correo de contacto: 
+              <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+            </p>
+          </div>
+
+          <h3 class="mb-4 text-lg font-bold text-center">Iztacalco</h3>
+          <div class="icon-container">
+            
+            <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+            <p>Teléfono de contacto: <a href="Tel: 55-93-87-40-00">55-93-87-40-00</a></p>
+          </div>
+      
+          <div class="flex items-center space-x-4">
+            <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+            <p class="text-sm">
+              Correo de contacto: 
+              <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+            </p>
+          </div>
+
+    </div>
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Chaixstu Motors Suzuki</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 55-15-61-23-00">55-15-61-23-00</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+  
+            <h3 class="mb-4 text-lg font-bold text-center">Chalco</h3>
+            <div class="icon-container">
+              
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href=" Tel:55-59-82-72-13">55-59-82-72-13</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+          </div>         
+    
+          <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Navarra Motors Seat</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 55-27-34-23-86">55-27-34-23-86</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+  
+        </div>   
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">IF Motors SEV</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Puebla los fuertes</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 22-22-82-70-86">22-22-82-70-86</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+            <h3 class="mb-4 text-lg font-bold text-center">Puebla Angelopolis</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 22-22-82-70-86">22-22-82-70-86</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+            <h3 class="mb-4 text-lg font-bold text-center">Chalco *EN CONSTRUCCIÓN*</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 22-22-82-70-86">22-22-82-70-86</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+        </div>   
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Fersan Bikes Harley Davidson</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Puebla Angelopolis</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 22-29-82-48-50">22-29-82-48-50</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+        </div> 
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Trendy Motors Omoda | Jaecoo</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="Tel: 55-60-90-99-64">55-60-90-99-64</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+        </div>
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Zeekr *EN CONSTRUCCIÓN*</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="AUN NO HAY">AUN NO HAY</a></p>
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+
+        </div>
+
+        <div class="agency-card">
+            <h3 class="mb-4 text-lg font-bold text-center">Chirey *EN CONSTRUCCIÓN*</h3>
+            <h3 class="mb-4 text-lg font-bold text-center">Ixtapaluca</h3>
+            <div class="icon-container">
+              <img src="{% static 'images/icon_tel1.png' %}" alt="Icono Teléfono" class="small-icon">
+              <p>Teléfono de contacto: <a href="AUN NO HAY">AUN NO HAY</a></p>
+
+            </div>
+        
+            <div class="flex items-center space-x-4">
+              <img src="{% static 'images/icon_email.png' %}" alt="Icono Email" class="small-icon">
+              <p class="text-sm">
+                Correo de contacto: 
+                <a href="mailto:ejemplo@fersan.com">ejemplo@fersan.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>        
+      {% include 'components/pie_de_pagina.html'%}
+    </body>
+    </html>

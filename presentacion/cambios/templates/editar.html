@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Fersan</title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/LOGOS_CARGA_PAGINA/HOLA.png' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles_editar.css' %}">
+</head>
+<body id="editar">
+
+  {% include 'components/menu_hamburguesa.html' %}
+
+  <main class="ml-64 p-8">
+      <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          {% for tarjeta in contenido.tarjetas %}
+              <div class="card-section">
+                  <h4 class="card-title">Tarjeta {{ forloop.counter }}</h4>
+                  <label for="titulo_{{ forloop.counter0 }}" class="form-label">Título:</label>
+                  <input type="text" id="titulo_{{ forloop.counter0 }}" name="titulo_{{ forloop.counter0 }}" value="{{ tarjeta.titulo }}" class="form-input">
+                  <label for="descripcion_{{ forloop.counter0 }}" class="form-label">Descripción:</label>
+                  <textarea id="descripcion_{{ forloop.counter0 }}" name="descripcion_{{ forloop.counter0 }}" class="form-textarea">{{ tarjeta.descripcion }}</textarea>
+                  <label for="imagen_{{ forloop.counter0 }}" class="form-label">Imagen:</label>
+                  <input type="file" id="imagen_{{ forloop.counter0 }}" name="imagen_{{ forloop.counter0 }}" class="form-input">
+              </div>
+          {% endfor %}
+
+          <!-- Botón para eliminar la última tarjeta -->
+          <button type="button" class="eliminar-tarjeta">Eliminar última tarjeta</button>
+
+          <!-- Botón para agregar una nueva tarjeta -->
+          <button type="button" class="agregar-tarjeta">Agregar tarjeta</button>
+
+          <!-- Botón para guardar -->
+          <button type="submit" class="form-button">Guardar</button>
+      </form>
+      
+      {% if messages %}
+      <div class="messages">
+          {% for message in messages %}
+              <div class="message {{ message.tags }}">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      </div>
+      {% endif %}
+  </main>
+
+  <!-- Script para manejo de eliminación y adición de tarjetas -->
+  <script>
+      document.querySelector('.eliminar-tarjeta').addEventListener('click', function() {
+          if (confirm('¿Estás seguro de que deseas eliminar la última tarjeta?')) {
+              const form = new FormData();
+              form.append('eliminar_tarjeta', 'last');  // Enviar 'last' para eliminar la última tarjeta
+
+              fetch('', {
+                  method: 'POST',
+                  body: form
+              })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.status === 'success') {
+                      alert('Última tarjeta eliminada exitosamente');
+                      location.reload();  // Recargar la página para reflejar el cambio
+                  } else {
+                      alert('Ocurrió un error al eliminar la tarjeta');
+                  }
+              });
+          }
+      });
+
+      document.querySelector('.agregar-tarjeta').addEventListener('click', function() {
+          const form = document.querySelector('form');
+          const newCardIndex = document.querySelectorAll('.card-section').length; // Nuevo índice
+
+          // Crear una nueva tarjeta con campos vacíos
+          const newCard = document.createElement('div');
+          newCard.classList.add('card-section');
+          newCard.innerHTML = `
+              <h4 class="card-title">Tarjeta ${newCardIndex + 1}</h4>
+              <label for="titulo_${newCardIndex}" class="form-label">Título:</label>
+              <input type="text" id="titulo_${newCardIndex}" name="titulo_${newCardIndex}" class="form-input">
+              <label for="descripcion_${newCardIndex}" class="form-label">Descripción:</label>
+              <textarea id="descripcion_${newCardIndex}" name="descripcion_${newCardIndex}" class="form-textarea"></textarea>
+              <label for="imagen_${newCardIndex}" class="form-label">Imagen:</label>
+              <input type="file" id="imagen_${newCardIndex}" name="imagen_${newCardIndex}" class="form-input">
+          `;
+
+          // Añadir la nueva tarjeta al formulario
+          form.insertBefore(newCard, form.querySelector('button[type="submit"]'));
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirey</title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/LOGOS_CARGA_PAGINA/GRUPO_FERSAN_LOGO_PAGINA.png' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body id="omoda-page" class="page-5 bg-gray-100"> 
+    
+  {% include 'components/menu_hamburguesa.html'%}
+
+<!-- Contenido principal -->
+  <main class="ml-64 p-8">
+    <h2 class="centered-title">Chirey</h2>
+    <div class="grid-container">
+        <!-- Agencia -->
+        <div class="grid-container">
+          {% for chirey_info in chirey.chirey_info %}
+            <div class="agency-card">
+              <h3><center>{{ chirey_info.lugar }}</center></h3>
+              <img class="small-image" src="{% static chirey_info.logo %}" alt="LOGO_SUCURSAL">
+              <img src="{% static chirey_info.imagen %}" alt="Agencia {{ chirey_info.lugar }}">
+              <p>{{ chirey_info.concecionario }}</p>
+              <p>{{ chirey_info.direccion }}</p>
+              <p><a href="{{ chirey_info.enlace }}" target="_blank">{{ chirey_info.enlace }}</a></p>
+              <p>Teléfono de contacto: <a href="tel:{{ chirey_info.telefono }}">{{ chirey_info.telefono }}</a></p>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </main>
+  {% include 'components/pie_de_pagina.html'%}
+  </body>
+</html>

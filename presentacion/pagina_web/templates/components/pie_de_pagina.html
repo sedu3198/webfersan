@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  {% load static %}  
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body> 
+  
+<footer id="footer">
+    <div class="fooster-container" id="horarios-container">
+        <!-- El contenido será generado dinámicamente -->
+    </div>
+    
+    <script>
+        // Cargar datos desde el archivo JSON
+        fetch('/static/data/horarios.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('horarios-container');
+                const pieHorarios = data.pie_horarios;
+    
+                // Generar el contenido dinámicamente
+                pieHorarios.forEach(departamento => {
+                    const div = document.createElement('div');
+                    div.className = 'horarios-departamento';
+                    div.innerHTML = `
+                        <h3>${departamento.departamento}</h3>
+                        <p>${departamento.horarios}</p>
+                    `;
+                    container.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error al cargar los datos:', error));
+    </script>
+    
+    
+    
+    
+    <hr>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div>
+            <h3>Mapa del Sitio</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="{% url 'marcas' %}">Marcas</a></li>
+                <li><a href="{% url 'localizador_agencias' %}">Localizador de Agencias</a></li>
+                <li><a href="{% url 'atencion_al_cliente' %}">Atención al Cliente</a></li>
+                <li><a href="{% url 'acerca_empresa' %}">Acerca de la Empresa</a></li>
+            </ul>
+        </div>
+        <div class="fooster-container" id="ubicacion-container">
+            <!-- El contenido será generado dinámicamente -->
+        </div>
+        
+        <script>
+            // Cargar datos desde el archivo JSON
+            fetch('/static/data/ubicacion.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('ubicacion-container');
+                    const pieUbicacion = data.pie_ubicacion;
+        
+                    // Generar el contenido dinámicamente
+                    pieUbicacion.forEach(item => {
+                        const div = document.createElement('div');
+                        div.innerHTML = `
+                            <h3>${item.encabezado}</h3>
+                            <p>${item.direccion}</p>
+                            <p>${item.telefono}</p>
+                        `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Error al cargar los datos:', error));
+        </script>
+        
+    </div>
+    <hr>
+    <div style="text-align: center;">
+        <p>&copy; 2024 Grupo Fersan México, S.A. de C.V.</p>
+        <p><a href="#">Aviso de Privacidad</a> | Desarrollo por los <a href="{% static 'images/troyano.png' %}">Becarios *-*</a></p>
+    
+</footer>
+</body>
+</html>

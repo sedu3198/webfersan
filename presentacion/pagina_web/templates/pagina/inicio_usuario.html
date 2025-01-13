@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'images/LOGOS_CARGA_PAGINA/HOLA.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Bienvenida</title>
+    
+    <!-- Importamos la fuente 'Poppins' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Enlace a tu archivo CSS general -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body id="inicio_usuario-page">
+    {% include 'components/menu_hamburguesa.html'%}
+    
+    <!-- Contenedor principal -->
+    <main class="welcome-container">
+        <h1>Bienvenido</h1>
+        <a href="{% url 'salir' %}" class="logout-button">Cerrar Sesión</a>
+    </main>
+
+</body>
+</html>

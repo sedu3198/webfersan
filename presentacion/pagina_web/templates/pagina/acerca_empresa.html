@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de Grupo Fersan</title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/LOGOS_CARGA_PAGINA/HOLA.png' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="acerca-page" class="bg-gray-100"> 
+ 
+  {% include 'components/menu_hamburguesa.html'%}
+
+  <!-- Contenido principal -->
+  <main class="ml-64 p-8">
+    <!-- Imagen del logotipo posicionada -->
+  <div class="top-right-logo">
+    <img class="small-image" src="{% static 'images/fersan_negro.png' %}" alt="LOGO_SUCURSAL">
+  </div>
+    <h2 class="centered-title">Acerca de Nosotros</h2>
+    <div class="bg-gray-200 p-8 rounded-md">
+      <div class="h3-box">
+        <h3 class="text-2xl font-bold mb-4">Sobre Nosotros</h3>
+        <p>Somos una empresa mexicana dedicada a soluciones automotrices a
+          traves de la concecion de diversas marcas de renombre internacional.
+          Entregamos resultados que superan las expectativas de nuestros
+          clientes y estamos comprometidos a brindar el más alto nivel de
+          servicio al cliente.</p>
+          
+      </div>
+
+      <div class="h3-box">
+        <h3 class="text-2xl font-bold mb-4">Misión</h3>
+        <p>Garantizar la satisfacción de nuestros clientes, ofreciendo
+          calidad de servicios, mejora continua y los mejores vehículos
+          para cada una de sus necesidades. Buscamos cada día superar
+          las expectativas de clientes y accionistas para liderar el
+          mercado automotriz, y así asegurar nuestra permanencia en el
+          mercado.</p>
+      </div>
+
+      <div class="h3-box">
+        <h3 class="text-2xl font-bold mb-4">Visión</h3>
+        <p>Somos un grupo rentable y sustentable, buscando ser líderes
+          en Venta, Post Venta y Vehículos Seminuevos. Nuestros
+          procesos garantizan la satisfacción de nuestros clientes y
+          equipo y nos colocan como referente nacional en el sector
+          Automotriz.</p>
+      </div>
+      
+      <div class="h3-box">
+        <h3 class="text-2xl font-bold mb-4">Antecedentes</h3>
+        <p>Nuestra historia inicio hace 48 años cuando el Lic. Gerardo
+          Fernández Sanchez el 27 de Agosto de 1971, inicia Refrescos
+          Naturales de Puebla S.A. de C.V. como distribuidor de los
+          productos Mundet, se comenzaron operaciones teniendo la
+          cobertura de Puebla y Tlaxcala.
+          En 1973 es otorgada la franquicia de los productos Mundet
+          por parte de la Dirección de Jugos de Frutas Mundet.
+          En 1982, después de años de constante desarrollo y
+          crecimiento, nace Embotelladora FERSAN S.A. de C.V., ya
+          con una marca y prestigio propio.
+          Actualmente contamos con una cartera de productos que
+          van desde agua purificada, hasta bebidas isotónicas,
+          teniendo presencia al interior de la república mexicana.</p>
+        <center><img src="{% static 'images/fersan_logo.png' %}" alt="Antecedentes de Grupo Fersan" class="mt-4 w-full h-auto rounded-lg shadow-lg"></center>
+      </div>
+    
+      <div class="h3-box">
+        <h3 class="text-2xl font-bold mb-4">Nuestros Servicios</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+            <li class="bg-gray-600 p-4 border-2 border-blue-500 text-center rounded-lg">
+                <h4 class="font-bold text-lg text-gray-200">Venta de Unidades Nuevas</h4>
+            </li>
+            <li class="bg-gray-600 p-4 border-2 border-blue-500 text-center rounded-lg">
+                <h4 class="font-bold text-lg text-gray-200">Venta de Unidades Usadas</h4>
+            </li>
+            <li class="bg-gray-600 p-4 border-2 border-blue-500 text-center rounded-lg">
+                <h4 class="font-bold text-lg text-gray-200">Servicio de Hojalatería y Pintura</h4>
+            </li>
+            <li class="bg-gray-600 p-4 border-2 border-blue-500 text-center rounded-lg">
+                <h4 class="font-bold text-lg text-gray-200">Refacciones</h4>
+            </li>
+        </ul>
+      </div>
+    </main>
+        {% include 'components/pie_de_pagina.html'%}
+</body>
+</html>

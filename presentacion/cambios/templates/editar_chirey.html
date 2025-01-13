@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar JSON - Grupo Fersan</title>
+  {% load static %}
+  <link rel="icon" type="image/png" href="{% static 'images/FERSAN_LOGO_PAGINA.png' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles_editar.css' %}">
+</head>
+<body id="editar">
+
+  {% include 'components/menu_hamburguesa.html' %}
+
+  <main class="ml-64 p-8">
+      <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          {% if chirey.chirey_info %}
+              {% for agencia in chirey.chirey_info %}
+                  <div class="card-section">
+                        <h4 class="card-title">Agencia {{ forloop.counter }}</h4>
+                        
+                        <label for="lugar_{{ forloop.counter0 }}" class="form-label">Lugar:</label>
+                        <input type="text" id="lugar_{{ forloop.counter0 }}" name="lugar_{{ forloop.counter0 }}" value="{{ agencia.lugar }}" class="form-input">
+
+                        <label for="logo_{{ forloop.counter0 }}" class="form-label">Logo:</label>
+                        <input type="file" id="logo_{{ forloop.counter0 }}" name="logo_{{ forloop.counter0 }}" accept="image/*" class="form-input">
+
+                        <label for="imagen_{{ forloop.counter0 }}" class="form-label">Imagen:</label>
+                        <input type="file" id="imagen_{{ forloop.counter0 }}" name="imagen_{{ forloop.counter0 }}" accept="image/*" class="form-input">
+
+                        <label for="concecionario_{{ forloop.counter0 }}" class="form-label">Concesionario:</label>
+                        <input type="text" id="concecionario_{{ forloop.counter0 }}" name="concecionario_{{ forloop.counter0 }}" value="{{ agencia.concecionario }}" class="form-input">
+
+                        <label for="direccion_{{ forloop.counter0 }}" class="form-label">Dirección:</label>
+                        <textarea id="direccion_{{ forloop.counter0 }}" name="direccion_{{ forloop.counter0 }}" class="form-textarea">{{ agencia.direccion }}</textarea>
+
+                        <label for="enlace_{{ forloop.counter0 }}" class="form-label">Enlace:</label>
+                        <input type="url" id="enlace_{{ forloop.counter0 }}" name="enlace_{{ forloop.counter0 }}" value="{{ agencia.enlace }}" class="form-input">
+
+                        <label for="telefono_{{ forloop.counter0 }}" class="form-label">Teléfono:</label>
+                        <input type="text" id="telefono_{{ forloop.counter0 }}" name="telefono_{{ forloop.counter0 }}" value="{{ agencia.telefono }}" class="form-input">
+                  </div>
+              {% endfor %}
+          {% else %}
+              <p>No hay información de agencias disponible.</p>
+          {% endif %}
+
+          <!-- Botón para guardar -->
+          <button type="submit" class="form-button">Guardar</button>
+      </form>
+
+      <!-- Mensajes -->
+      {% if messages %}
+      <div class="messages">
+          {% for message in messages %}
+              <div class="message {{ message.tags }}">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      </div>
+      {% endif %}
+  </main>
+
+</body>
+</html>
